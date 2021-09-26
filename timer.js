@@ -13,11 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('The countdown has ended!');
     });
 
-  // Toggle theme
-
-
-  var ver = document.getElementById('ver');
-  ver.innerHTML = flipdown.version;
 });
 var player;
 function onYouTubeIframeAPIReady() {
