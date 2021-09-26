@@ -12,18 +12,18 @@ document.addEventListener('DOMContentLoaded', () => {
     .ifEnded(() => {
       console.log('The countdown has ended!');
     });
+    var player;
+
+    // This code loads the IFrame Player API code asynchronously. This is the Youtube-recommended script loading method
+    var tag = document.createElement("script");
+    tag.src = "https://youtube.com/iframe_api";
+    tag.id = "youtubeScript";
+    var firstScriptTag = document.getElementsByTagName("script")[1];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+    // Create youtube player (function called by YouTube API)
 
 });
-var player;
-
-// This code loads the IFrame Player API code asynchronously. This is the Youtube-recommended script loading method
-var tag = document.createElement("script");
-tag.src = "https://youtube.com/iframe_api";
-tag.id = "youtubeScript";
-var firstScriptTag = document.getElementsByTagName("script")[1];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// Create youtube player (function called by YouTube API)
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player-div", {
    
@@ -48,15 +48,12 @@ function onYouTubeIframeAPIReady() {
 }
 // Player ready handler. Autoplay video when player is ready
 function onPlayerReady(event) {
- 
+  $('.btn').removeClass( "disabled" );
 }
 
 // Video state change handler.
 function onPlayerStateChange(event) {
 
-}
-window.onclick = () => {
-  player.unMute();
 }
 window.onclick = () => {
   player.unMute();
