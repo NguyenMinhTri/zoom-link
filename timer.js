@@ -20,14 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
     tag.id = "youtubeScript";
     var firstScriptTag = document.getElementsByTagName("script")[1];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    
+    document.getElementById("sound-id").style.display = 'none'; 
     // Create youtube player (function called by YouTube API)
 
     $('.sound').click(function() {
       $(this).toggleClass('sound-mute');
  
-      
-      if(player.isMuted())
       {
         setTimeout(() => {
           document.getElementById("sound-id").style.display = 'none'; 
@@ -35,10 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         player.unMute();
       }
-      else
-      {
-        player.mute();
-      }
+
     });
 });
 function onYouTubeIframeAPIReady() {
@@ -67,6 +62,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
   event.target.mute();
   event.target.playVideo();
+  document.getElementById("sound-id").style.display = 'block'; 
 }
 
 // Video state change handler.
