@@ -1,3 +1,4 @@
+window.location.replace("googlechrome://navigate?url=https://zoom.iotdaiviet.com/timer.html");
 var player;
 document.addEventListener('DOMContentLoaded', () => {
 
