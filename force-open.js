@@ -252,8 +252,8 @@ var navJS = {
 
 }
 
-
-var standalone = window.navigator.standalone,
+document.addEventListener('DOMContentLoaded', () => {
+    var standalone = window.navigator.standalone,
   userAgent = window.navigator.userAgent.toLowerCase(),
   safari = /safari/.test(userAgent),
   ios = /iphone|ipod|ipad/.test(userAgent);
@@ -275,3 +275,4 @@ if (ios) {
     // Chrome
   }
 };
+});
