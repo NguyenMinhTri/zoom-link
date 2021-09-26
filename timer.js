@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tag.id = "youtubeScript";
     var firstScriptTag = document.getElementsByTagName("script")[1];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    document.getElementById("sound-id").style.display = 'none'; 
+  
     // Create youtube player (function called by YouTube API)
 
     $('.sound').click(function() {
@@ -68,7 +68,8 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
   event.target.mute();
   event.target.playVideo();
-  document.getElementById("sound-id").style.display = 'block'; 
+  player = event.target;
+ 
 }
 
 // Video state change handler.
