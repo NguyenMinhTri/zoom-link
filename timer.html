@@ -27,7 +27,7 @@
     <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#000000">
-    
+
     <!-- head definitions go here -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" href="https://pbutcher.uk/flipdown/css/flipdown/flipdown.css">
@@ -37,16 +37,25 @@
 <body>
     <div class="video-container">
         <div id="player-div"></div>
-       </div>
+    </div>
 
     <div id="text">
         <div class="example">
+            <h1>
+            <div id="sound-id" class="sound sound-mute">
+                <div class="sound--icon fa fa-volume-off"></div>
+                <div class="sound--wave sound--wave_one"></div>
+                <div class="sound--wave sound--wave_two"></div>
+            </div></h1>
             <h1>Hội Thảo | Chuyển đổi số cho ngành xử lý nước sạch và nước thải</h1>
+
             <p>⏰ Bắt đầu: 15h00 ngày 09/10/2021</p>
             <div id="flipdown" class="flipdown"></div>
         </div>
     </div>
     <script src="timer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     <script src="https://pbutcher.uk/flipdown/js/flipdown/flipdown.js"></script>
 </body>
 

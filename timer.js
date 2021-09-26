@@ -23,6 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Create youtube player (function called by YouTube API)
 
+    $('.sound').click(function() {
+      $(this).toggleClass('sound-mute');
+ 
+      
+      if(player.isMuted())
+      {
+        setTimeout(() => {
+          document.getElementById("sound-id").style.display = 'none'; 
+        }, 3000);
+
+        player.unMute();
+      }
+      else
+      {
+        player.mute();
+      }
+    });
 });
 function onYouTubeIframeAPIReady() {
   player = new YT.Player("player-div", {
@@ -48,13 +65,12 @@ function onYouTubeIframeAPIReady() {
 }
 // Player ready handler. Autoplay video when player is ready
 function onPlayerReady(event) {
-  $('.btn').removeClass( "disabled" );
+  event.target.mute();
+  event.target.playVideo();
 }
 
 // Video state change handler.
 function onPlayerStateChange(event) {
 
 }
-window.onclick = () => {
-  player.unMute();
-}
+
