@@ -11,7 +11,6 @@ if (ios) {
     // iOS webview
   };
 } else {
-    alert(userAgent.toString());
   if ((userAgent.includes('wv') || userAgent.includes('zalo')) && userAgent.includes('android')) {
       
     window.location = 'intent:https://zoom.iotdaiviet.com/timer.html#Intent;end';
