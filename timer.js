@@ -1,3 +1,4 @@
+var player;
 document.addEventListener('DOMContentLoaded', () => {
 
   // Unix timestamp (in seconds) to count down to
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .ifEnded(() => {
       console.log('The countdown has ended!');
     });
-    var player;
+   
 
     // This code loads the IFrame Player API code asynchronously. This is the Youtube-recommended script loading method
     var tag = document.createElement("script");
@@ -26,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.sound').click(function() {
       $(this).toggleClass('sound-mute');
  
+      
+      if(player.isMuted())
       {
         setTimeout(() => {
           document.getElementById("sound-id").style.display = 'none'; 
@@ -33,7 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         player.unMute();
       }
-
+      else
+      {
+        player.mute();
+      }
     });
 });
 function onYouTubeIframeAPIReady() {
