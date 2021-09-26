@@ -1,4 +1,4 @@
-window.location = 'intent:http://navis.iotdaiviet.com/timer.html#Intent;end';
+
 var player;
 document.addEventListener('DOMContentLoaded', () => {
 
